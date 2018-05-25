@@ -38,7 +38,7 @@ IF(MEX_CMD AND MEXEXT_CMD)
             ADD_CUSTOM_COMMAND(
                 OUTPUT ${MEX_FILE}
                 COMMAND ${MEX_REAL_CMD}
-                ARGS ${MATLSD_SOURCE_DIR}/${MEX_NAME}.cpp -I${LSD_SOURCE_DIR}/include -I${OpenCV_INCLUDE_DIR1} -I${OpenCV_INCLUDE_DIR2} -L${LIBRARY_OUTPUT_PATH} -L${OpenCV_LIB_PATH} -llsd -lopencv_core247 -lopencv_highgui247 -lopencv_imgproc247
+                ARGS ${MATLSD_SOURCE_DIR}/${MEX_NAME}.cpp -I${LSD_SOURCE_DIR}/include -I/usr/include/opencv -L${LIBRARY_OUTPUT_PATH} -L/usr/lib/ -llsd -lopencv_core -lopencv_highgui -lopencv_imgproc
                 COMMENT "Building MEX extension ${MEX_FILE}"
             )
             ADD_CUSTOM_TARGET(mex_${MEX_NAME} ALL DEPENDS ${MEX_FILE})
